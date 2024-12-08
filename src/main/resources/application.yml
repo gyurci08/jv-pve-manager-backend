@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: JvPveManagerBackend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pve_manager
+    username: pve_manager
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: debug
+    hu:
+      pte:
+        mik: debug
+    root: info
+
+server:
+  port: 8888
+
