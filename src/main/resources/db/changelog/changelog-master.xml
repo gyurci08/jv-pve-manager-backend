@@ -66,6 +66,13 @@
                                  referencedColumnNames="id"/>
     </changeSet>
 
+    <changeSet id="1733333033219-3" author="gyurci08">
+        <insert tableName="app_user">
+            <column name="username" value="gyurci08"/>
+            <column name="password" value="$2a$10$rXMPcOyfMU8bxwoQoAC3UOUr.6nHaYm.xTMv.El4QqQZ8of3/RQNu"/>
+        </insert>
+    </changeSet>
+
 
 
 </databaseChangeLog>

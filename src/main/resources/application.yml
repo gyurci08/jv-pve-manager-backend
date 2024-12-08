@@ -24,3 +24,5 @@ logging:
 server:
   port: 8888
 
+jwt:
+  secret: sOop-lwzVcoOV1_RE3yKFZ9QR4634T6zc9VLQ3rvZnk=
