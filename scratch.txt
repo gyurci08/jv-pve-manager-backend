@@ -1,0 +1,89 @@
+jv-pve-manager-backend
+
+Backend (Java)
+	The Java backend would serve as the intermediary between the Angular frontend and the Proxmox/Salt infrastructure. It would handle the following tasks:
+
+		User Authentication: Implement secure login functionality.
+		API Endpoints: Create RESTful APIs for the frontend to interact with.
+		Proxmox Integration: Use Proxmox API to manage VM creation and configuration
+
+		Salt Integration: Utilize Salt Cloud to automate VM deployments and configurations
+
+
+Frontend (Angular)
+	The Angular frontend would provide a user-friendly interface for VM deployment:
+
+		Login Page: Allow users to authenticate.
+		VM Selection: Present options for VM configurations, including Apache.
+		Deployment Progress: Show real-time updates during the VM creation process.
+
+Automation Process
+	When a user requests a new VM with Apache, the system would:
+
+		Use Salt Cloud to create a VM in Proxmox based on a predefined profile
+
+		Apply a Salt state to install and configure Apache on the new VM.
+		Use Proxmox API to finalize VM settings and network configuration
+		
+
+	
+	
+	
+jv-pve-manager-backend
+├── auth
+│   ├── controller
+│   ├── service
+│   ├── repository
+│   └── model
+├── vm
+│   ├── controller
+│   ├── service
+│   ├── repository
+│   └── model
+├── proxmox
+│   ├── service
+│   └── model
+├── salt
+│   ├── service
+│   └── model
+├── config
+└── common
+    ├── exception
+    └── util
+
+	
+	
+	
+	
+	
+	
+Backend (Java)	
+	
+	User Authentication
+		Implement secure login functionality using industry-standard authentication protocols:
+
+			Use Spring Security for robust authentication and authorization.
+			
+			Implement JWT (JSON Web Tokens) for stateless authentication.
+			Store user credentials securely using bcrypt password hashing.
+
+	API Endpoints
+		Create RESTful APIs for the frontend to interact with:
+
+			Use Spring Boot to quickly set up a RESTful API structure.
+			Implement CRUD operations for managing VMs and configurations.
+			Ensure proper input validation and error handling for all endpoints.
+
+	Proxmox Integration
+		Integrate with Proxmox API to manage VM creation and configuration:
+
+			Utilize the Proxmox VE API to interact with the Proxmox infrastructure.
+			Implement methods for creating, starting, stopping, and deleting VMs.
+			Manage VM resources such as CPU, memory, and storage allocation.
+
+	Salt Integration
+		Utilize Salt Cloud to automate VM deployments and configurations:
+			Implement Salt Cloud integration using the Salt Java API
+			
+			Configure Salt Cloud providers and profiles programmatically.
+			Use Salt Cloud to provision and manage virtual machines across different cloud providers
